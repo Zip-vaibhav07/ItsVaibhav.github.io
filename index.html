@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Personal Webpage</title>
+    
+    <style>
+         /* Global Styles */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, p {
+    
+    text-align: center;
+}
+
+/* Header Styles */
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+.header {
+    animation: fadeIN 2s ease-in;
+    background-color: #33333300;
+    background-size: 50%;
+
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+
+    text-align: center;
+}
+
+/* Profile Styles */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-family: cursive;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-info {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 35px;
+    color: cornsilk;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+/* Skills Style*/
+.skills {
+    margin-bottom: 40px;
+}
+
+.skills-title {
+    
+
+    color: #f4f5f5;
+    padding: 20px;
+    width: 95%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.skills-list {
+    font-size: 150%;
+    list-style: none;
+    padding: 0;
+    margin: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-item {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 8px 40px;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+/* Projects Styles */
+.projects {
+    margin-bottom: 40px;
+}
+
+.projects-title {
+
+    
+    
+    color: #fff;
+    padding: 20px;
+    border-radius: 25%;
+    width: 95%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-card {
+    background-color: #f7f6f641;
+    color: #333;
+    padding: 20px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+}
+
+.project-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-style: oblique;
+    margin-bottom: 10px;
+}
+
+/* Contact Styles */
+.contact {
+    text-align: center;
+}
+
+.contact-title {
+    
+    
+    color: #fff;
+    padding: 20px;
+    width: 95%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    font-size: 150%;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+h3{
+    text-align: left;
+}
+h6{
+    color: white;
+    text-align: center;
+}
+h2{
+    text-decoration: wavy;
+    font-size: 200%;
+    font-style: italic;
+    color: rgb(243, 243, 242);
+   
+}
+
+.background{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   overflow: hidden;
+}
+.background video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.social{
+    font-size: 145%;
+}
+.facebook{
+    
+    width: 100%;
+    position: relative;
+    padding: 1px 30px;
+    font-size: 1.5rem;
+    color: var(--color);
+    border: 2px solid rgba(78, 12, 191, 0.5);
+    border-radius: 400px;
+    text-shadow: 0 0 15px var(--color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3.5rem;
+    transition: 0.5s;
+    z-index: 1;
+}
+.instagram{
+    width: 100%;
+    position: relative;
+    padding: 1px 30px;
+    font-size: 1.5rem;
+    color: var(--color);
+    border: 2px solid rgba(78, 12, 191, 0.5);
+    border-radius: 400px;
+    text-shadow: 0 0 15px var(--color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3.5rem;
+    transition: 0.5s;
+    z-index: 1;
+}
+.twitter{
+    width: 100%;
+    position: relative;
+    padding: 1px 30px;
+    font-size: 1.5rem;
+    color: var(--color);
+    border: 2px solid rgba(78, 12, 191, 0.5);
+    border-radius: 400px;
+    text-shadow: 0 0 15px var(--color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3.5rem;
+    transition: 0.5s;
+    z-index: 1;
+}
+.snapchat{
+    width: 100%;
+    position: relative;
+    padding: 1px 30px;
+    font-size: 1.5rem;
+    color: var(--color);
+    border: 2px solid rgba(78, 12, 191, 0.5);
+    border-radius: 400px;
+    text-shadow: 0 0 15px var(--color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3.5rem;
+    transition: 0.5s;
+    z-index: 1;
+}
+.fa-co:hover{
+    color:#b37f7f;
+    border: 2px solid rgba(0, 0, 0, 0.626);
+    box-shadow: 0 0 0px var(--color);
+    
+}
+.fa-co::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#f7f6f600;
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.5s;
+}
+.fa-co::before{
+    transform: scale(1);
+    transition-delay: 0.5s;
+    box-shadow: 0 0 10px var(--color),
+    0 0 30px var(--color),
+    0 0 60px var(--color);
+}
+.in-co::hover{
+    color:#b37f7f;
+    border: 2px solid rgba(104, 195, 225, 0.626);
+    box-shadow: 0 0 0px var(--color);
+    
+    
+}
+.in-co::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(243, 245, 246, 0);
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.in-co::before{
+    transform: scale(1);
+    transition-delay: 0.5s;
+    box-shadow: 0 0 10px var(--color),
+    0 0 30px var(--color),
+    0 0 60px var(--color);
+}
+.ti-co:hover{
+    color:#b37f7f;
+    border: 2px solid rgba(104, 195, 225, 0.626);
+    box-shadow: 0 0 0px var(--color);
+    
+}
+.ti-co::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(248, 251, 251, 0);
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.5s;
+}
+.ti-co::before{
+    transform: scale(1);
+    transition-delay: 0.5s;
+    box-shadow: 0 0 10px var(--color),
+    0 0 30px var(--color),
+    0 0 60px var(--color);
+}
+.sn-co:hover{
+    color:#b37f7f;
+    border: 2px solid rgba(104, 195, 225, 0.626);
+    box-shadow: 0 0 0px var(--color);
+    
+}
+.sn-co::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(76, 77, 72, 0);
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.5s;
+}
+.sn-co::before{
+    transform: scale(1);
+    transition-delay: 0.5s;
+    box-shadow: 0 0 10px var(--color),
+    0 0 30px var(--color),
+    0 0 60px var(--color);
+}
+
+    
+
+    </style>
+    
+    
+</head>
+<body>
+
+    <div class="background">
+        <video autoplay muted loop src="Cyan Purple Pink Gradient Color and Style Video Background.mp4"></video>
+    </div>
+   
+   
+   </div>
+
+    <div class="container">
+
+       
+        <header class="header">
+            <h1>---- Welcome to My Personal Page ----</h1>
+        </header>
+        
+        <section class="profile">
+            <br><br>
+            <img src="vaibhav.jpeg" alt="Profile Picture" class="profile-image">
+            <h1 class="profile-name">VAIBHAV ZIPARE</h1>
+            <h2>Computer Science Student</h2>
+            
+        </section>
+        
+      
+        <section class="skills">
+            <h2 class="skills-title">Skills</h2>
+            <hr>
+            <ul class="skills-list">
+                <li class="skills-item">HTML</li>
+                <li class="skills-item">CSS</li>
+                <li class="skills-item">C</li>
+                <li class="skills-item">C++</li>
+                
+            </ul>
+        </section>
+        
+        <section class="projects">
+            <h2 class="projects-title">Projects</h2>
+            <hr>
+            <br>
+            <div class="project-card">
+                <h3 class="project-title">Personal Website</h3>
+                
+                <p class="project-description">Developed a personal website using HTML, CSS.</p>
+            </div>
+            <br>
+            <div class="project-card">
+                 
+                <h3 class="project-title">Institute Webpage</h3>
+                <p class="project-description">Built an Institute website with informative functionality.</p>
+            </div>
+        </section>
+
+        <br>
+         
+        <h2>Social Media</h2>
+        <div class="socia-media-buttons">
+            <hr>
+            <br>
+            <br>
+              <button class="facebook"><a style="font-size: 120%; font-style: normal; text-decoration: solid;" href="https://www.facebook.com/profile.php?id=100090938134035&mibextid=ZbWKwL" class="fa-co" >FACEBOOK</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <button class="instagram"><a style="font-size: 120%; font-style: normal; text-decoration: solid;" href="https://instagram.com/v_a_i_b_h_a_v_0723?igshid=MzNlNGNkZWQ4Mg==" class="in-co">INSTAGRAM</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            <button class="twitter"><a style="font-size: 120%; font-style: normal; text-decoration: solid;" href="https://twitter.com/VaibhavZipare?t=9nQucHkXEKQ_A_BwSg-L9A&s=09" class="ti-co" >TWIITER</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="snapchat"><a style="font-size: 120%; font-style: normal; text-decoration: solid;"href="https://www.snapchat.com/add/zip_vaibhav0723?share_id=RFTchOmZfGw&locale=en-US" class="sn-co">SNAPCHAT</a></button>
+            
+            <br>
+           
+            
+        </div>
+    </section>
+          
+           
+        
+        <section class="contact">
+            <h2 class="contact-title">Contact</h2>
+            <hr>
+            <br>
+            <form class="contact-form" action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+    <br>
+    <h6>&copy;2023 VaibhavZipare. All rights reserved</h6>
+    <h6></h6>
+</body>
+</html>
